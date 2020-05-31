@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Chess Centre',
+  title: 'Deadline',
   logo: '',
   url: 'https://chesscentre.online',
   favicon: '../common/static/favicon/favicon.png',
