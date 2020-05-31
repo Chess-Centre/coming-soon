@@ -65,8 +65,8 @@ const ParticlesComponent = () => {
         params={{
           particles: {
             number: {
-              value: 10,
-              density: { enable: true, value_area: 1400 },
+              value: 40,
+              density: { enable: true },
             },
 
             shape: {
@@ -178,7 +178,7 @@ const ParticlesComponent = () => {
                   src: `${Particle112}`,
                   width: 50,
                   height: 50,
-                }
+                },
               ],
             },
             opacity: {
@@ -222,7 +222,7 @@ const IndexPage = () => (
           {/* <Link to={'/three'}>
             <img src={LogoImage} alt="logo" />
           </Link> */}
-          <h1>Bradford Chess Centre</h1>
+          <h1 className="primary">Bradford Chess Centre</h1>
         </LogoImageContainer>
         <Container className="mainContainer">
           <MainContentSection>

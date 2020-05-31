@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const LogoImageContainer = styled.div`
   text-align: center;
+  padding: 10px;
   padding-top: 40px;
   @media (max-width: 1600px) {
     padding-top: 30px;

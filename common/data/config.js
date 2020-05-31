@@ -1,11 +1,11 @@
 module.exports = {
-  title: 'Deadline',
+  title: 'Chess Centre',
   logo: '',
-  url: 'https://redq.inc',
+  url: 'https://chesscentre.online',
   favicon: '../common/static/favicon/favicon.png',
   cover: '',
-  legalName: 'RedQ Inc',
-  description: 'React Gatsby Coming soon template',
+  legalName: 'Bradford Chess Centre Limited',
+  description: 'Chess Centre of Excellence',
   socialLinks: {
     twitter: '',
     github: '',
@@ -31,6 +31,6 @@ module.exports = {
     email: '',
     phone: '',
   },
-  foundingDate: '2019',
+  foundingDate: '2020',
   googleVerification: 'xxx',
 };
