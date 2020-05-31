@@ -66,7 +66,6 @@ const ParticlesComponent = () => {
           particles: {
             number: {
               value: 40,
-              density: { enable: true },
             },
 
             shape: {
