@@ -5,53 +5,49 @@ import Button from '../Button/';
 import Loader from '../Loader';
 import { Form } from './ConatctForm.style';
 
+function encode(data) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
+
 export default function ContactForm() {
-  const [value, setValue] = useState('');
-  const [error, setError] = useState(false);
-  const [success, setSuccess] = useState(false);
-  const [pending, setPending] = useState(false);
-  const { start } = useTimeout(() => {
-    if (error) setError(false);
-    if (success) setSuccess(false);
-  }, 3500);
-  const handleSubmit = async e => {
-    e.preventDefault();
-    setPending(true);
+  const [state, setState] = useState({})
 
-    console.log('contact form');
+  const handleChange = (e) => {
+    setState({ ...state, [e.target.name]: e.target.value })
+  }
 
-    setTimeout(function() {
-      setPending(false);
-      setSuccess(true);
-      setError(false);
-      start();
-      setValue('');
-    }, 2000);
-  };
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const form = e.target
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': form.getAttribute('name'),
+        ...state,
+      }),
+    })
+      .then(() => console.log("Done!"))
+      .catch((error) => alert(error))
+  }
 
-  const handleChange = event => {
-    setValue(event.target.value);
-  };
   return (
-    <Form onSubmit={handleSubmit} netlify netlify-honeypot="bot-field">
-      <TextField
-        id="user_email"
-        placeholder="placeholder"
-        type="email"
-        required="required"
-        value={value}
-        error={error}
-        errorMessage="errorMessage"
-        successMessage="successMsg"
-        success={success}
-        onChange={handleChange}
-      />
-      <Button
-        type="submit"
-        title="buttonText"
-        isLoading={pending}
-        loader={<Loader loaderColor="white" />}
-      />
+    <Form
+      name="contact"
+      method="post"
+      action="/thanks/"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      onSubmit={handleSubmit}
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <p hidden>
+        Don’t fill this out: <input name="bot-field" onChange={handleChange} />
+      </p>
+        <TextField type="email" placeholder="placeholder" name="email" onChange={handleChange} />
+        <Button type="submit" title="buttonText" />
     </Form>
   );
 }
