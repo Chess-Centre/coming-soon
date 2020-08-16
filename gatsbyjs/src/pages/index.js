@@ -1,19 +1,19 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-//import { Link } from 'gatsby';
+import { Link } from 'gatsby';
 import Particles from 'react-particles-js';
 import LanguageProvider from '@deadline/common/LanguageSwitcher/context/language.provider';
 import LanguageSwitcher from '@deadline/common/LanguageSwitcher';
 import languageConfig from '@deadline/common/LanguageSwitcher/config';
-//import NormalClock from '@deadline/components/NormalClock/NormalClock.js';
+import NormalClock from '@deadline/components/NormalClock/NormalClock.js';
 import MainWrapper, {
   MainContentSection,
-  //NormalClockWrapper,
+  NormalClockWrapper,
   FooterSection,
   LogoImageContainer,
   ParticleContainer,
 } from '@deadline/common/ui/three.style';
-import LogoImage from '@deadline/common/static/images/logoOne.png';
+import LogoImage from '@deadline/common/static/BCC_logo_horizontal.png';
 import { SOCIAL_PROFILES } from '@deadline/common/data/social-share/three';
 // Language translation files
 import localEng from '@deadline/common/data/translation/three/en.json';
@@ -56,7 +56,7 @@ const messages = {
   he: localIl,
 };
 
-//const deadline = new Date(Date.parse(new Date()) + 12 * 24 * 60 * 60 * 1000);
+const deadline = new Date(Date.parse(new Date()) + 78 * 24 * 60 * 60 * 1000);
 const ParticlesComponent = () => {
   return (
     <>
@@ -218,19 +218,15 @@ const IndexPage = () => (
           <ParticlesComponent />
         </ParticleContainer>
         <LogoImageContainer>
-          {/* <Link to={'/three'}>
-            <img src={LogoImage} alt="logo" />
-          </Link> */}
-          <h1 className="primary">Bradford Chess Centre</h1>
+          <Link to={'/three'}>
+            <img src={LogoImage} alt="logo" width="600" />
+          </Link>
         </LogoImageContainer>
         <Container className="mainContainer">
           <MainContentSection>
-            {/* <NormalClockWrapper>
+            <NormalClockWrapper>
               <NormalClock countdown={deadline} />
-            </NormalClockWrapper> */}
-            <h2>
-              <FormattedMessage id="mainMessage" />
-            </h2>
+            </NormalClockWrapper>
             <p>
               <FormattedMessage id="description" />
             </p>

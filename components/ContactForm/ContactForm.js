@@ -17,33 +17,6 @@ export default function ContactForm() {
   const handleSubmit = async e => {
     e.preventDefault();
     setPending(true);
-    // const response = await fetch(
-    //   'https://api.sendgrid.com/v3/marketing/contacts',
-    //   {
-    //     headers: {
-    //       Accept: 'application/json',
-    //       'Content-Type': 'application/json',
-    //       Authorization: `Bearer ${process.env.SENDGRID_API_KEY}`,
-    //     },
-    //     method: 'PUT',
-    //     body: JSON.stringify({
-    //       list_ids: [],
-    //       contacts: [{ email: value }],
-    //     }),
-    //   }
-    // );
-    // const data = await response.json();
-    // console.log(data, 'data');
-    // if (data.job_id) {
-    //   setPending(false);
-    //   setSuccess(true);
-    //   start();
-    //   setValue('');
-    // } else if (data.errors.length) {
-    //   setPending(false);
-    //   setError(true);
-    //   start();
-    // }
 
     console.log('contact form');
 
@@ -60,7 +33,7 @@ export default function ContactForm() {
     setValue(event.target.value);
   };
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} netlify netlify-honeypot="bot-field">
       <TextField
         id="user_email"
         placeholder="placeholder"
