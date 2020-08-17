@@ -29,7 +29,9 @@ export default function ContactForm() {
         ...state,
       }),
     })
-      .then(() => console.log("Done!"))
+      .then(() => {
+        setState({... state, email: ''});
+      })
       .catch((error) => alert(error))
   }
 
@@ -37,7 +39,6 @@ export default function ContactForm() {
     <Form
       name="contact"
       method="post"
-      action="/thanks/"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
       onSubmit={handleSubmit}

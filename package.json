@@ -23,7 +23,8 @@
     "nextjs-export": "yarn workspace @deadline/nextjs run export",
     "docz-dev": "yarn workspace @deadline/docz run docz:dev",
     "docz-build": "yarn workspace @deadline/docz run docz:build",
-    "prebuild": "yarn clean:build"
+    "prebuild": "yarn clean:build",
+    "start": "echo 'done'"
   },
   "husky": {
     "hooks": {
