@@ -16,24 +16,20 @@
 
 :warning: This repository acts as the 'under construction' deployment site until the [platform](https://github.com/chess-centre/platform) is ready.
 
-Currently being served is our e-commerce shopping site with Spreadshirt.
+Currently being served is our e-commerce shopping site created via the provider [spreadshirt](https://www.spreadshirt.co.uk/)
 
 * http://bradford.chesscentre.online/
+* http://chesscentre.online/
 
 ## General Info
 
 The coming soon page was originally a gatsby landing page, which can be run locally as follows:
 
 ```
-yarn
+yarn && yarn gatsby-dev
 ```
 
-```
-// For starting GatsbyJs Server run
-yarn gatsby-dev
-```
-
-GatsbyJs server will start in `localhost:8000`
+The Gatsby site will be served on `localhost:8000`
 
 ## Contributing
 
