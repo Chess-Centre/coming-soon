@@ -35,4 +35,6 @@ The Gatsby site will be served on `localhost:8000`
 
 See our [welcome](https://github.com/chess-centre/welcome) respository for guidelines on helping us develop this platform
 
+LICENSE: MIT
+
 
